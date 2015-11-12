@@ -18,6 +18,7 @@ enum GPIO_VALUE{ LOW=0, HIGH=1 };
 class GPIO
 {
     private:
+        int pinNum;
         string name, path;
         
         int write(string path, string filename, string value);
@@ -27,7 +28,6 @@ class GPIO
         
         
     public:
-        int pinNum;
         GPIO(int pinNum);
         virtual int setDirection(GPIO_DIRECTION dir);
         virtual int setValue(GPIO_VALUE value);
