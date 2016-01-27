@@ -1,3 +1,0 @@
-GPIO.cpp: In member function 'std::string GPIO_Library::GPIO::read(std::string, std::string)':
-GPIO.cpp:48:13: error: invalid conversion from 'int' to 'const char*' [-fpermissive]
-/usr/include/c++/4.6/bits/basic_string.tcc:214:5: error:   initializing argument 1 of 'std::basic_string<_CharT, _Traits, _Alloc>::basic_string(const _CharT*, const _Alloc&) [with _CharT = char, _Traits = std::char_traits<char>, _Alloc = std::allocator<char>]' [-fpermissive]
