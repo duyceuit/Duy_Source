@@ -28,7 +28,9 @@ class GPIO
         
     public:
         int pinNum;
+        GPIO();
         GPIO(int pinNum);
+        virtual void GPIO_Init(int input_pin);
         virtual int setDirection(GPIO_DIRECTION dir);
         virtual int setValue(GPIO_VALUE value);
         virtual GPIO_VALUE getValue();

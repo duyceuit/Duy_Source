@@ -7,6 +7,11 @@
 using namespace std;
 
 namespace GPIO_Library{
+
+GPIO::GPIO()
+{
+    
+}
     
 GPIO::GPIO(int input_pin)
 {
@@ -21,6 +26,21 @@ GPIO::GPIO(int input_pin)
     cout << "path: " << this->path <<endl;
     this->exportGPIO();
     usleep(250000);
+}
+
+void GPIO::GPIO_Init(int input_pin)
+{
+    this->pinNum = input_pin;
+    cout << "input pinNum: " << this->pinNum <<endl;
+    ostringstream pinNumStr;
+    pinNumStr << "gpio" << pinNum;
+    cout << "pinNumStr: " << pinNumStr.str() <<endl;
+    this->name = string(pinNumStr.str());
+    cout << "name: " << this->name <<endl;
+    this->path = GPIO_PATH + this->name + "/";
+    cout << "path: " << this->path <<endl;
+    this->exportGPIO();
+    usleep(250000);    
 }
 
 

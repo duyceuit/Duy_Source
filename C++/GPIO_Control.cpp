@@ -20,25 +20,16 @@ void sent_byte(unsigned char value, GPIO* GPIO_Group, unsigned char GPIO_Group_s
 int main(){
     // GPIO outGPIO(3);
     // outGPIO.setDirection(OUTPUT);
-    // Basic Output - Flash the LED 10 times, once per second
-  unsigned int count=0;
-//     while(count)
-//     {
-//         outGPIO.setValue(HIGH);
-//         usleep(2000000);
-//         outGPIO.setValue(LOW);
-//         usleep(2000000);
-//         count--;
-//     }
     
-    GPIO IO_Group[IO_SIZE] = {3,2,49,15};
-    init_GPIO_group(IO_Group, IO_SIZE);
-    while(count<16)
-    {
-        sent_byte(count, IO_Group, IO_SIZE);
-        count++;
-        usleep(1*1000000);
-    }
+  unsigned int count=0;
+    //GPIO IO_Group[IO_SIZE] = {3,2,49,15};
+    // init_GPIO_group(IO_Group, IO_SIZE);
+    // while(count<16)
+    // {
+    //     sent_byte(count, IO_Group, IO_SIZE);
+    //     count++;
+    //     usleep(1*1000000);
+    // }
    return 0;
 }
 
