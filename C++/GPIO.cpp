@@ -3,6 +3,7 @@
 #include<fstream>
 #include<string>
 #include<sstream>
+#include<unistd.h> //for usleep
 
 using namespace std;
 

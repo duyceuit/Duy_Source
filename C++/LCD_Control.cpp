@@ -25,6 +25,10 @@ using namespace std;
 int main(){
     GPIO RS(_RS),E(_E), D4(_D4), D5(_D5), D6(_D6), D7(_D7);
     LCD MyLCD(RS,E,D4,D5,D6,D7);
-    MyLCD.PrintName();
+    MyLCD.LCD_init();
+    while(1)
+    {
+        
+    }
    return 0;
 }

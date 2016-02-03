@@ -2,6 +2,7 @@
 #include<string>
 #include"GPIO.h"
 #include"LCD.h"
+#include<unistd.h> //for usleep
 
 using namespace GPIO_Library;
 using namespace std;
@@ -23,7 +24,7 @@ LCD::LCD(GPIO RS, GPIO E, GPIO D4, GPIO D5, GPIO D6, GPIO D7)
     this->D7    =   D7;
 }
     
-void LCD::LCD_Init(GPIO RS, GPIO E, GPIO D4, GPIO D5, GPIO D6, GPIO D7)
+void LCD::LCD_contrusctor(GPIO RS, GPIO E, GPIO D4, GPIO D5, GPIO D6, GPIO D7)
 {
     this->RS    =   RS;
     this->E     =   E;
@@ -43,9 +44,58 @@ void LCD::PrintName()
     cout << "D7: " << this->D7.pinNum << endl;
 }
 
-void LCD::LCD_SetUp()
+void LCD::LCD_enable()
 {
-    
+    this->E.setValue(LOW);
+    usleep(1*1000);
+    this->E.setValue(HIGH);
+}
+
+void LCD::LCD_command(unsigned char command)
+{
+    this->RS.setValue(LOW);
+    this->D7.setValue((((command>>8)&0x01)?HIGH:LOW));
+    this->D6.setValue((((command>>7)&0x01)?HIGH:LOW));
+    this->D5.setValue((((command>>6)&0x01)?HIGH:LOW));
+    this->D4.setValue((((command>>5)&0x01)?HIGH:LOW));
+    LCD_enable();
+    this->D7.setValue((((command>>4)&0x01)?HIGH:LOW));
+    this->D6.setValue((((command>>3)&0x01)?HIGH:LOW));
+    this->D5.setValue((((command>>2)&0x01)?HIGH:LOW));
+    this->D4.setValue((((command>>1)&0x01)?HIGH:LOW));
+    LCD_enable();
+    usleep(1*1000);
+}
+
+void LCD::LCD_putc(unsigned char c)
+{
+    this->RS.setValue(LOW);
+    this->D7.setValue((((c>>8)&0x01)?HIGH:LOW));
+    this->D6.setValue((((c>>7)&0x01)?HIGH:LOW));
+    this->D5.setValue((((c>>6)&0x01)?HIGH:LOW));
+    this->D4.setValue((((c>>5)&0x01)?HIGH:LOW));
+    LCD_enable();
+    this->D7.setValue((((c>>4)&0x01)?HIGH:LOW));
+    this->D6.setValue((((c>>3)&0x01)?HIGH:LOW));
+    this->D5.setValue((((c>>2)&0x01)?HIGH:LOW));
+    this->D4.setValue((((c>>1)&0x01)?HIGH:LOW));
+    LCD_enable();
+    usleep(1*1000);
+}
+
+
+void LCD::LCD_init()
+{
+    this->E.setValue(HIGH);
+    this->RS.setValue(LOW);
+    LCD_command(0x33);
+    LCD_command(0x32);
+    LCD_command(LCD_FONT_4BIT);
+    LCD_command(LCD_DISPLAY_ON);
+    LCD_command(LCD_MOVE_CURSOR);
+    LCD_command(LCD_CURSOR_ON);
+    LCD_command(LCD_CLEAR);
+    usleep(250*1000);
 }
 
 LCD::~LCD()

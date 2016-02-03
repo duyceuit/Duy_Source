@@ -33,9 +33,12 @@ class LCD
     public:
         LCD();
         LCD(GPIO RS, GPIO E, GPIO D4, GPIO D5, GPIO D6, GPIO D7);
-        virtual void LCD_Init(GPIO RS, GPIO E, GPIO D4, GPIO D5, GPIO D6, GPIO D7);
-        virtual void LCD_SetUp();
+        virtual void LCD_contrusctor(GPIO RS, GPIO E, GPIO D4, GPIO D5, GPIO D6, GPIO D7);
         virtual void PrintName();
+        virtual void LCD_enable();
+        virtual void LCD_command(unsigned char command);
+        virtual void LCD_putc(unsigned char c);
+        virtual void LCD_init();
         ~LCD();
 };
     
