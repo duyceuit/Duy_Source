@@ -1,48 +1,38 @@
-LCD.cpp: In member function 'virtual void LCD_4bit_Library::LCD::PrintName()':
-LCD.cpp:38:34: error: no match for 'operator<<' in 'std::operator<< [with _Traits = std::char_traits<char>]((* & std::cout), ((const char*)"RS: ")) << ((LCD_4bit_Library::LCD*)this)->LCD_4bit_Library::LCD::RS'
-LCD.cpp:38:34: note: candidates are:
-/usr/include/c++/4.6/ostream:110:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:110:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&) {aka std::basic_ostream<char>& (*)(std::basic_ostream<char>&)}'
-/usr/include/c++/4.6/ostream:119:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>, std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
-/usr/include/c++/4.6/ostream:119:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}'
-/usr/include/c++/4.6/ostream:129:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:129:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'std::ios_base& (*)(std::ios_base&)'
-/usr/include/c++/4.6/ostream:167:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:167:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'long int'
-/usr/include/c++/4.6/ostream:171:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:171:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'long unsigned int'
-/usr/include/c++/4.6/ostream:175:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:175:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'bool'
-/usr/include/c++/4.6/bits/ostream.tcc:93:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char, _Traits = std::char_traits<char>]
-/usr/include/c++/4.6/bits/ostream.tcc:93:5: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'short int'
-/usr/include/c++/4.6/ostream:182:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:182:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'short unsigned int'
-/usr/include/c++/4.6/bits/ostream.tcc:107:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char, _Traits = std::char_traits<char>]
-/usr/include/c++/4.6/bits/ostream.tcc:107:5: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'int'
-/usr/include/c++/4.6/ostream:193:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:193:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'unsigned int'
-/usr/include/c++/4.6/ostream:202:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:202:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'long long int'
-/usr/include/c++/4.6/ostream:206:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:206:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'long long unsigned int'
-/usr/include/c++/4.6/ostream:211:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:211:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'double'
-/usr/include/c++/4.6/ostream:215:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:215:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'float'
-/usr/include/c++/4.6/ostream:223:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:223:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'long double'
-/usr/include/c++/4.6/ostream:227:7: note: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
-/usr/include/c++/4.6/ostream:227:7: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'const void*'
-/usr/include/c++/4.6/bits/ostream.tcc:121:5: note: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
-/usr/include/c++/4.6/bits/ostream.tcc:121:5: note:   no known conversion for argument 1 from 'GPIO_Library::GPIO' to 'std::basic_ostream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}'
-/usr/include/c++/4.6/bits/basic_string.h:2693:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
-/usr/include/c++/4.6/ostream:451:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
-/usr/include/c++/4.6/ostream:456:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
-/usr/include/c++/4.6/ostream:462:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
-/usr/include/c++/4.6/ostream:468:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
-/usr/include/c++/4.6/ostream:473:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
-/usr/include/c++/4.6/ostream:493:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
-/usr/include/c++/4.6/bits/ostream.tcc:323:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
-/usr/include/c++/4.6/ostream:510:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
-/usr/include/c++/4.6/ostream:523:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
-/usr/include/c++/4.6/ostream:528:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+/tmp/ccWuw0vC.o: In function `main':
+LCD_Control.cpp:(.text+0x10): undefined reference to `GPIO_Library::GPIO::GPIO(int)'
+LCD_Control.cpp:(.text+0x1e): undefined reference to `GPIO_Library::GPIO::GPIO(int)'
+LCD_Control.cpp:(.text+0x2c): undefined reference to `GPIO_Library::GPIO::GPIO(int)'
+LCD_Control.cpp:(.text+0x3a): undefined reference to `GPIO_Library::GPIO::GPIO(int)'
+LCD_Control.cpp:(.text+0x48): undefined reference to `GPIO_Library::GPIO::GPIO(int)'
+/tmp/ccWuw0vC.o:LCD_Control.cpp:(.text+0x56): more undefined references to `GPIO_Library::GPIO::GPIO(int)' follow
+/tmp/ccWuw0vC.o: In function `main':
+LCD_Control.cpp:(.text+0xdc): undefined reference to `LCD_4bit_Library::LCD::LCD(GPIO_Library::GPIO, GPIO_Library::GPIO, GPIO_Library::GPIO, GPIO_Library::GPIO, GPIO_Library::GPIO, GPIO_Library::GPIO)'
+LCD_Control.cpp:(.text+0xe6): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0xf0): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0xfa): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0x104): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0x10e): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+/tmp/ccWuw0vC.o:LCD_Control.cpp:(.text+0x118): more undefined references to `GPIO_Library::GPIO::~GPIO()' follow
+/tmp/ccWuw0vC.o: In function `main':
+LCD_Control.cpp:(.text+0x122): undefined reference to `LCD_4bit_Library::LCD::LCD_init()'
+LCD_Control.cpp:(.text+0x12e): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0x13a): undefined reference to `LCD_4bit_Library::LCD::~LCD()'
+LCD_Control.cpp:(.text+0x146): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0x152): undefined reference to `LCD_4bit_Library::LCD::~LCD()'
+LCD_Control.cpp:(.text+0x15e): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0x16a): undefined reference to `LCD_4bit_Library::LCD::~LCD()'
+LCD_Control.cpp:(.text+0x176): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0x182): undefined reference to `LCD_4bit_Library::LCD::~LCD()'
+LCD_Control.cpp:(.text+0x18e): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0x19a): undefined reference to `LCD_4bit_Library::LCD::~LCD()'
+LCD_Control.cpp:(.text+0x1a6): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0x1b2): undefined reference to `LCD_4bit_Library::LCD::~LCD()'
+LCD_Control.cpp:(.text+0x1be): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0x1ca): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0x1d6): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0x1e2): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+LCD_Control.cpp:(.text+0x1ee): undefined reference to `GPIO_Library::GPIO::~GPIO()'
+/tmp/ccWuw0vC.o:LCD_Control.cpp:(.text+0x1fa): more undefined references to `GPIO_Library::GPIO::~GPIO()' follow
+/tmp/ccWuw0vC.o: In function `GPIO_Library::GPIO::GPIO(GPIO_Library::GPIO const&)':
+LCD_Control.cpp:(.text._ZN12GPIO_Library4GPIOC2ERKS0_[_ZN12GPIO_Library4GPIOC5ERKS0_]+0x5c): undefined reference to `vtable for GPIO_Library::GPIO'
+collect2: ld returned 1 exit status

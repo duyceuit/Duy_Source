@@ -9,7 +9,8 @@ using std::string;
 using std::ofstream;
 
 #define GPIO_PATH "/sys/class/gpio/"
-
+#define _MS 1000
+#define _S  1000000
 namespace GPIO_Library{
 
 enum GPIO_DIRECTION{ INPUT, OUTPUT };
@@ -18,7 +19,7 @@ enum GPIO_VALUE{ LOW=0, HIGH=1 };
 class GPIO
 {
     private:
-        string name, path;
+
         
         int write(string path, string filename, string value);
         int write(string path, string filename, int value);
@@ -28,6 +29,7 @@ class GPIO
         
     public:
         int pinNum;
+        string name, path;
         GPIO();
         GPIO(int pinNum);
         virtual void GPIO_Init(int input_pin);

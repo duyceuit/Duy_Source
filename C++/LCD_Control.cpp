@@ -15,20 +15,31 @@ using namespace LCD_4bit_Library;
 using namespace std;
 
 #define _4BIT_MODE  4
-#define _RS  5
-#define _E   4
+#define _RS  48
+#define _E   51
 #define _D4  3
 #define _D5  2
 #define _D6  49
 #define _D7  15
 
 int main(){
+    int count=2;
     GPIO RS(_RS),E(_E), D4(_D4), D5(_D5), D6(_D6), D7(_D7);
+    cout << "------------------Contruct MyLCD------------------" << endl;
     LCD MyLCD(RS,E,D4,D5,D6,D7);
+    cout << "------------------Init LCD------------------" << endl;
     MyLCD.LCD_init();
-    while(1)
+    MyLCD.LCD_putc('H');
+    MyLCD.LCD_putc('E');
+    MyLCD.LCD_putc('L');
+    MyLCD.LCD_putc('L');
+    MyLCD.LCD_putc('O');
+    while(count)
     {
-        
+        cout << count << endl;
+        usleep(3*1000000);
+        count--;
     }
+    cout << "------------------End------------------" << endl;
    return 0;
 }

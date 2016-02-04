@@ -1,0 +1,2 @@
+#!/bin/bash
+g++ LCD_Control.cpp GPIO.cpp LCD.cpp -o LCD_Control

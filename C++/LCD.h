@@ -8,17 +8,42 @@
 /****************************************************************************
 	define LCD command
 *****************************************************************************/
-#define LCD_CLEAR			0x01	// Clear display
-#define LCD_HOME			0x02  	// return cursor and LCD to home position
-#define LCD_OFF 			0x08	// turn off display and cursor
-#define LCD_DISPLAY_ON		0x0C	// turn on display and turn off cursor
-#define LCD_CURSOR_ON		0x0A 	// turn on cursor and turn off display
-#define LCD_BLINK_CURSOR 	0x0E	// turn on display and blink cursor
-#define LCD_FONT_8BIT		0x38	// set interace length: 8bits, 2 lines, font 5x8
-#define LCD_FONT_4BIT		0x28	// set interace length: 4bits, 2 lines, font 5x8	
-#define LCD_MOVE_CURSOR		0x06	// Entry mode set: set increments mode, not shift (cursor)
-#define LCD_MDRIGHT			0x1C	// Move display to the right
-#define LCD_MDLEFT			0x18    // Move display to the left
+#define LCD_CLEARDISPLAY    0x01
+#define LCD_RETURNHOME           0x02
+#define LCD_ENTRYMODESET         0x04
+#define LCD_DISPLAYCONTROL       0x08
+#define LCD_CURSORSHIFT          0x10
+#define LCD_FUNCTIONSET          0x20
+#define LCD_SETCGRAMADDR         0x40
+#define LCD_SETDDRAMADDR         0x80
+
+//Entry flags
+#define LCD_ENTRYRIGHT           0x00
+#define LCD_ENTRYLEFT            0x02
+#define LCD_ENTRYSHIFTINCREMENT  0x01
+#define LCD_ENTRYSHIFTDECREMENT  0x00
+
+//Control flags
+#define LCD_DISPLAYON            0x04
+#define LCD_DISPLAYOFF           0x00
+#define LCD_CURSORON             0x02
+#define LCD_CURSOROFF            0x00
+#define LCD_BLINKON              0x01
+#define LCD_BLINKOFF             0x00
+
+//Move flags
+#define LCD_DISPLAYMOVE          0x08
+#define LCD_CURSORMOVE           0x00
+#define LCD_MOVERIGHT            0x04
+#define LCD_MOVELEFT             0x00
+
+//Function set flags
+#define LCD_8BITMODE             0x10
+#define LCD_4BITMODE             0x00
+#define LCD_2LINE                0x08
+#define LCD_1LINE                0x00
+#define LCD_5x10DOTS             0x04
+#define LCD_5x8DOTS              0x00
 
 using namespace GPIO_Library;
 using namespace std;
@@ -28,9 +53,10 @@ namespace LCD_4bit_Library{
 class LCD
 {
     private:
-        GPIO RS,E,D4,D5,D6,D7;
+
     
     public:
+        GPIO RS,E,D4,D5,D6,D7;
         LCD();
         LCD(GPIO RS, GPIO E, GPIO D4, GPIO D5, GPIO D6, GPIO D7);
         virtual void LCD_contrusctor(GPIO RS, GPIO E, GPIO D4, GPIO D5, GPIO D6, GPIO D7);
@@ -38,6 +64,9 @@ class LCD
         virtual void LCD_enable();
         virtual void LCD_command(unsigned char command);
         virtual void LCD_putc(unsigned char c);
+        virtual void LCD_Set_Direction();
+        virtual void Test_LCD_Port();
+        virtual void LCD_RESET();
         virtual void LCD_init();
         ~LCD();
 };

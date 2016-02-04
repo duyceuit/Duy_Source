@@ -18,18 +18,21 @@ void init_GPIO_group(GPIO* GPIO_Group, unsigned char GPIO_Group_size);
 void sent_byte(unsigned char value, GPIO* GPIO_Group, unsigned char GPIO_Group_size);
 
 int main(){
-    // GPIO outGPIO(3);
-    // outGPIO.setDirection(OUTPUT);
+    GPIO outGPIO(5);
+    outGPIO.setDirection(OUTPUT);
     
   unsigned int count=0;
     //GPIO IO_Group[IO_SIZE] = {3,2,49,15};
     // init_GPIO_group(IO_Group, IO_SIZE);
-    // while(count<16)
-    // {
-    //     sent_byte(count, IO_Group, IO_SIZE);
-    //     count++;
-    //     usleep(1*1000000);
-    // }
+    while(count<10)
+    {
+        // sent_byte(count, IO_Group, IO_SIZE);
+        outGPIO.setValue(HIGH);
+        usleep(1*1000000);
+        outGPIO.setValue(LOW);
+        usleep(1*1000000);
+        count++;
+    }
    return 0;
 }
 

@@ -62,6 +62,7 @@ void GPIO::GPIO_Init(int input_pin)
 int GPIO::write(string path, string filename, string value){
    ofstream fs;
    fs.open((path + filename).c_str());
+//   cout << "Write to Path: " << (path + filename) << endl;
    if (!fs.is_open()){
 	   perror("GPIO: write failed to open file ");
 	   return -1;
@@ -149,6 +150,7 @@ GPIO_VALUE GPIO::getValue()
 }
 GPIO::~GPIO()
 {
+    // cout << "Uncontructor..." << endl;
     this->unexportGPIO();
 }
 }
